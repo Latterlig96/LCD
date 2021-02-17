@@ -1,0 +1,6 @@
+opencv-contrib-python == 4.3.0.36
+onnxruntime
+numpy == 1.19.4
+numba == 0.51.2 
+pyyaml
+pytest

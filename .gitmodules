@@ -1,0 +1,3 @@
+[submodule "Yolov3_Darknet_PyTorch_Onnx_Converter"]
+	path = Yolov3_Darknet_PyTorch_Onnx_Converter
+	url = https://github.com/matankley/Yolov3_Darknet_PyTorch_Onnx_Converter.git

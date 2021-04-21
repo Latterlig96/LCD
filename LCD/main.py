@@ -5,14 +5,14 @@ from config import Config
 
 parser = argparse.ArgumentParser(description="YOLO CPU Model")
 
-parser.add_argument("--input_stream",
+parser.add_argument("--input-stream",
                     dest="input_stream",
                     help="Input stream param, 0 stands for camera, otherwise path to video file",
                     default=0,
                     type=str)
 
-parser.add_argument("--config_path",
-                    dest="config path",
+parser.add_argument("--config-path",
+                    dest="config_path",
                     help="config file with predefined parameters to run program",
                     type=str)
 

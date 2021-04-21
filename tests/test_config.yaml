@@ -1,7 +1,7 @@
 files:
-    model_weights_path: <path to yolo weights> 
-    model_config_path: <path to model config file>
-    coco_names: <path to coco names file>
+    model_weights_path: ../config/yolov3.weights 
+    model_config_path: ../config/yolov3.cfg
+    coco_names: ../config/coco.names
 image: 
     size: [416, 416]
     scalefactor: 0.00392
@@ -19,12 +19,12 @@ utils:
     line: [0, 700, 1100, 500]
     use_opencv: True
 log:
-    filename: <log filename> 
-    level: <log level>
+    filename: logs.log 
+    level: INFO
 backend: 
     inference_engine: False #if you are not using NCS (Neural Compute Stick), set this property to False
 trakcer: 
     use_tracker: True
     timestamp_init_frames: 10
     multi_tracker: True
-    trakcer_type: <tracker type>
+    trakcer_type: KCF

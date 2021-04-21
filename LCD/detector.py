@@ -2,7 +2,6 @@ import logging
 import time
 from functools import lru_cache
 from typing import Dict, List, Tuple, Union
-import onnxruntime
 import cv2
 import numpy as np 
 from loader import Loader
@@ -38,8 +37,8 @@ class Detector:
                         model_config_path=self.config.model_config_path,
                         coco_names=self.config.coco_names)
         if self.config.use_tracker: 
-            self.tracker = Tracker.loader_tracker_from_config(self.config.tracker_type)
-            self.tracker.init_trakcer(self.config.multi_tracker)
+            self.tracker = Tracker.load_tracker_from_config(self.config.tracker_type)
+            self.tracker.init_tracker(self.config.multi_tracker)
         if self.config.use_opencv:
             self.model, self.classes, self.output_layers, self.colors = loader.load_cv2_yolo()
         else: 
@@ -97,6 +96,7 @@ class Detector:
                 "Detection suspended, camera is not opened, check your configuration"
             )
             return
+            
         frame_counter = 0 
         while True: 
             _, frame = camera.read()
@@ -105,7 +105,7 @@ class Detector:
                 continue
             before = time.time()
             frame_shape: Tuple[int] = frame.shape
-            blob = cv2.dnn.blobFromimage(image=frame,
+            blob = cv2.dnn.blobFromImage(image=frame,
                                          scalefactor=scalefactor,
                                          size=img_size,
                                          mean=mean,

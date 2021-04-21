@@ -1,4 +1,3 @@
-import cv2
 import pytest
 from tracker import Tracker
 

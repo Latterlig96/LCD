@@ -1,5 +1,4 @@
-from typing import List, Tuple, Union
-import cv2
+from typing import List, Tuple
 import numba 
 import numpy as np
 

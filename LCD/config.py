@@ -1,7 +1,6 @@
-from os import PathLike
 import pathlib
 from dataclasses import dataclass
-from typing import Optional, Tuple
+from typing import Tuple
 import yaml
 
 
